@@ -24,5 +24,10 @@
     "deepmerge": "4.2.2",
     "wdio-chromedriver-service": "^5.0.2",
     "wdio-cucumberjs-json-reporter": "^1.1.3"
+  },
+  "dependencies": {
+    "glob": "^7.1.6",
+    "gulp": "^4.0.2",
+    "yargs": "^15.3.1"
   }
 }

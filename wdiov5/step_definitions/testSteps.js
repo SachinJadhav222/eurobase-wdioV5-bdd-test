@@ -8,6 +8,7 @@ Given('I visit {string}', URL => {
 })
 
 Then('I entered {string} at {string}', (expectedValue, selector) => {
+	console.log('Platform=============>>>>>>>>>>>>>',process.platform)
 	browser.$(locators[selector]).setValue(expectedValue);
 	
 })
