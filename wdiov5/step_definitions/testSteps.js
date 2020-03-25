@@ -20,16 +20,16 @@ Then('I shloud see home page', () => {
 })
 
 Then('I should see {string} at {string}', (expectedValue, selector) => {
-	browser.$(locators[selector]).getText()
+	browser.$(locators[selector]).getText().equals(expectedValue);
 	
 })
 
 Then('I should see page title {string}',(expectedValue)=>{
-   browser.getTitle();
+   browser.getTitle().equals(expectedValue);
 })
 
-Then('I scrolled to bottom',()=>{
-browser.getTitle();	
+Then('I scrolled to {string}',(selector)=>{
+browser.$(locators[selector]).scrollIntoView();
 })
 
 Then('I select {string} from dropdown at {string}',(expedtedValue,selector)=>{

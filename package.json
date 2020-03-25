@@ -21,7 +21,8 @@
     "@wdio/spec-reporter": "^5.22.4",
     "@wdio/sync": "^5.20.1",
     "chromedriver": "^80.0.1",
+    "deepmerge": "4.2.2",
     "wdio-chromedriver-service": "^5.0.2",
-    "deepmerge": "4.2.2"
+    "wdio-cucumberjs-json-reporter": "^1.1.3"
   }
 }
