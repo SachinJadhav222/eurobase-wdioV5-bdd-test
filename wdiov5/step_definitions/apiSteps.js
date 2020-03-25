@@ -1,12 +1,18 @@
-import { Given, When, Then } from "cucumber";
+import { Given, When, Then,Before } from "cucumber";
 import { newUser1, newUser2, MAX_Code } from "../test-data/apiTestData";
+const apickli = require('apickli');
 const apiPoints = require("../config/endPoints");
 let expectedResponse = null;
+
+// Before(()=> {
+//     apickli = new apickli.Apickli('http', 'httpbin.org');
+//     apickli.addRequestHeader('Cache-Control', 'no-cache');
+// });
 
 Given(
   "I make request to {string} with the endpoint {string}",
   (baseUrl, endPoint) => {
-    browser.getUrl();
+   
   }
 );
 

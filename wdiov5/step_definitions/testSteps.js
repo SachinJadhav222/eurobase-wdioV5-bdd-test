@@ -2,6 +2,7 @@ import { Given, When, Then } from 'cucumber';
 //import {locators} from '../support/locators'
 const locators= require('../support/locator').locators
 const urls=require('../config/urls');
+const assert = require('cucumber-assert');
 
 Given('I visit {string}', URL => {
 	browser.url(urls[URL])
@@ -16,17 +17,23 @@ Then('I click on {string}', selector => {
 	browser.$(locators[selector]).click();
 })
 
-Then('I shloud see home page', () => {
-	browser.getTitle();
+Then('I shloud see Page title {string}', (expectedValue) => {
+	// browser.getTitle().then((readValue)=>{
+	// 	expect(readValue).to.contain(expectedValue)
+	// })
+	assert.equal(browser.getTitle(),expectedValue)
+	//expect(browser.getTitle()).to.contain(expectedValue);
 })
 
 Then('I should see {string} at {string}', (expectedValue, selector) => {
-	browser.$(locators[selector]).getText().equals(expectedValue);
+	assert.equal(browser.$(locators[selector]).getText(),expectedValue);
+	
 	
 })
 
 Then('I should see page title {string}',(expectedValue)=>{
-   browser.getTitle().equals(expectedValue);
+	assert.equal(browser.getTitle(),expectedValue)
+  // browser.getTitle();
 })
 
 Then('I scrolled to {string}',(selector)=>{

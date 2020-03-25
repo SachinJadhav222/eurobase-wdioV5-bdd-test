@@ -1,4 +1,19 @@
+const argv = require('yargs').argv
+const currentTime = new Date().toJSON().replace(/:/g, "-");
+let featureFilePath;
+if (argv.ff) {
+    //featureFilePath = 'tests/features/featureFiles/colleague/'+argv.ff+'.feature';
+    featureFilePath = 'wdiov5/features/test/' + argv.ff + '.feature';
+}
+else {
+    //featureFilePath = 'tests/features/featureFiles/colleague/';
+    featureFilePath = 'wdiov5/features/test/*.feature';
+}
+
 exports.config = {
+
+
+  
   //
   // ====================
   // Runner Configuration
@@ -123,10 +138,28 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter.html
-  reporters: [ "spec"],
-  reporterOptions: {
-        outputDir: "./wdiov5/reports/JSON"
-    },
+
+  // reporters: [ "spec"],
+  // reporterOptions: {
+  //       outputDir: 'JSON'
+  //   },
+
+    reporters: [
+  
+  ['json',{
+      outputDir: './Results',
+      outputFileFormat: function(opts) { 
+        return `results-${currentTime}.json`
+    }
+  }]
+],
+  
+  // reporters: [['allure', {
+  //       outputDir: 'allure-results',
+  //       disableWebdriverStepsReporting: true,
+  //       disableWebdriverScreenshotsReporting: true,
+  //   }]],
+
     
   //  reporters: [
   //     "cucumberjs-json",
