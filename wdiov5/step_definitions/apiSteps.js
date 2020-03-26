@@ -1,6 +1,6 @@
 import { Given, When, Then,Before } from "cucumber";
 import { newUser1, newUser2, MAX_Code } from "../test-data/apiTestData";
-const apickli = require('apickli');
+//const apickli = require('apickli');
 const apiPoints = require("../config/endPoints");
 let expectedResponse = null;
 

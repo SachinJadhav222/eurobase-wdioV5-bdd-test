@@ -129,6 +129,7 @@ exports.config = {
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   cucumberOpts: {
+  
     // <boolean> show full backtrace for errors
     backtrace: false,
     // <string[]> module used for processing required features

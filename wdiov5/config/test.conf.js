@@ -1,5 +1,5 @@
 const argv = require('yargs').argv
-const currentTime = new Date().toJSON().replace(/:/g, "-");
+//const currentTime = new Date().toJSON().replace(/:/g, "-");
 let featureFilePath;
 if (argv.ff) {
     //featureFilePath = 'tests/features/featureFiles/colleague/'+argv.ff+'.feature';
@@ -9,6 +9,7 @@ else {
     //featureFilePath = 'tests/features/featureFiles/colleague/';
     featureFilePath = 'wdiov5/features/test/*.feature';
 }
+console.log('Feature============>>>>>>>>...',featureFilePath)
 
 exports.config = {
 
@@ -139,20 +140,20 @@ exports.config = {
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter.html
 
-  // reporters: [ "spec"],
-  // reporterOptions: {
-  //       outputDir: 'JSON'
-  //   },
+  reporters: [ "spec"],
+  reporterOptions: {
+        outputDir: './wdiov5/reports/JSON'
+    },
 
-    reporters: [
+//     reporters: [
   
-  ['json',{
-      outputDir: './Results',
-      outputFileFormat: function(opts) { 
-        return `results-${currentTime}.json`
-    }
-  }]
-],
+//   ['json',{
+//       outputDir: './Results',
+//       outputFileFormat: function(opts) { 
+//         return `results-${currentTime}.json`
+//     }
+//   }]
+// ],
   
   // reporters: [['allure', {
   //       outputDir: 'allure-results',
@@ -337,3 +338,4 @@ exports.config = {
   //onReload: function(oldSessionId, newSessionId) {
   //}
 };
+//console.log('Feature============>>>>>>>>...',featureFilePath)

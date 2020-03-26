@@ -4,6 +4,12 @@ const locators= require('../support/locator').locators
 const urls=require('../config/urls');
 const assert = require('cucumber-assert');
 
+
+// After(()=>{
+// 	console.log('Closing browser----------->>')
+// 	browser.close();
+// })
+
 Given('I visit {string}', URL => {
 	browser.url(urls[URL])
 })
