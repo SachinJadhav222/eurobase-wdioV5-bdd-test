@@ -141,7 +141,10 @@ exports.config = {
     [
       "json",
       {
-        outputDir: "./reports/JSON"
+        outputDir: "./wdiov5/reports/JSON",
+        outputFileFormat: function(opts) { 
+        return `results-${opts.cid}.json`
+    }
       }
     ]
   ],
