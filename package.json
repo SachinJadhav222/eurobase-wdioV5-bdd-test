@@ -23,7 +23,8 @@
     "@wdio/sync": "^5.20.1",
     "chromedriver": "^80.0.1",
     "deepmerge": "4.2.2",
-    "wdio-chromedriver-service": "^5.0.2"
+    "wdio-chromedriver-service": "^5.0.2",
+    "wdio-json-reporter": "^1.4.0"
   },
   "dependencies": {
     "apickli": "^2.3.3",
