@@ -1,10 +1,12 @@
-import { Given, When, Then } from 'cucumber';
+import { Given, When, Then ,Before,After} from 'cucumber';
 //import {locators} from '../support/locators'
 const locators= require('../support/locator').locators
 const urls=require('../config/urls');
 const assert = require('cucumber-assert');
 
-
+// Before(()=>{
+// 	console.log("This is Before +++++++++++")
+// })
 // After(()=>{
 // 	console.log('Closing browser----------->>')
 // 	browser.close();

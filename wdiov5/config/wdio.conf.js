@@ -1,3 +1,5 @@
+const fs = require("fs");
+const htmlReporter = require("multiple-cucumber-html-reporter");
 exports.config = {
   //
   // ====================
@@ -142,12 +144,22 @@ exports.config = {
       "json",
       {
         outputDir: "./wdiov5/reports/JSON",
-        outputFileFormat: function(opts) { 
+        outputFileFormat: function(opts) {
         return `results-${opts.cid}.json`
     }
       }
     ]
   ],
+
+  // reporters: ["json-cucumber"],
+
+  // reporterOptions: {
+  //   outputDir: "./wdiov5/reports/JSON",
+  //   cucumberJsonReporter: {
+  //     verbose: true, // true|false - set to true for verbose logging
+  //     deviceName: "Local test environment" // Meta data for multiple-cucumber-html-reporter
+  //   }
+  // },
 
   //
   // Options to be passed to Mocha.
@@ -196,8 +208,9 @@ exports.config = {
     // <boolean> add cucumber tags to feature or scenario name
     tagsInTitle: false,
     // <number> timeout for step definitions
-    timeout: 20000
-  }
+    timeout: 20000,
+    format: "json"
+  },
   //
   // =====
   // Hooks
@@ -306,8 +319,20 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {<Object>} results object containing test results
    */
-  // onComplete: function(exitCode, config, capabilities, results) {
+  //  onComplete: function(exitCode, config, capabilities, results) {
+
   // },
+
+  // onComplete: () => {
+  //   // browser.close();
+  //   htmlReporter.generate({
+  //     pageTitle: `My report page title`,
+  //     reportName: `Cucumber test report`,
+  //     disableLog: true,
+  //     jsonDir: "./wdiov5/reports/JSON/",
+  //     reportPath: "./wdiov5/reports/DashBoard/"
+  //   });
+  // }
   /**
    * Gets executed when a refresh happens.
    * @param {String} oldSessionId session ID of the old session
