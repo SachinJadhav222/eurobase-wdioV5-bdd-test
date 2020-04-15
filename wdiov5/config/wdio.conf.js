@@ -188,7 +188,7 @@ exports.config = {
     // <string[]> (name) specify the profile to use
     profile: [],
     // <string[]> (file/dir) require files before executing features
-    requireModule: ["@babel/register"],
+    //requireModule: ["@babel/register"],
 
     require: [
       //"./wdiov5/support/common.js",
