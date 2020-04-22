@@ -1,4 +1,4 @@
-import { Given, When, Then,Before } from "cucumber";
+import { Given, When, Then, Before } from "cucumber";
 import { newUser1, newUser2, MAX_Code } from "../test-data/apiTestData";
 //const apickli = require('apickli');
 const apiPoints = require("../config/endPoints");
@@ -11,9 +11,7 @@ let expectedResponse = null;
 
 Given(
   "I make request to {string} with the endpoint {string}",
-  (baseUrl, endPoint) => {
-   
-  }
+  (baseUrl, endPoint) => {}
 );
 
 Given(
@@ -30,14 +28,14 @@ Given(
   }
 );
 
-Then("I should see response status code {string}", statusCode => {
+Then("I should see response status code {string}", (statusCode) => {
   browser.getUrl();
 });
-Then("I should see response body to have {string}", bodyCo => {
+Then("I should see response body to have {string}", (bodyCo) => {
   browser.getUrl();
 });
 
-Then("I should see response body to have lenght of {string}", bodyLength => {
+Then("I should see response body to have lenght of {string}", (bodyLength) => {
   browser.getUrl();
 });
 

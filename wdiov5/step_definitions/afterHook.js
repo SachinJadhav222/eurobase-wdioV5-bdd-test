@@ -1,5 +1,4 @@
-
-import { Before,After} from 'cucumber';
+import { Before, After } from "cucumber";
 // module.exports = function() {
 
 //     let count = 1;
@@ -14,9 +13,6 @@ import { Before,After} from 'cucumber';
 
 // };
 
- After(function (scenario) {
-        console.log("This is After =======>>>")
-       
-    });
-
-
+After(function (scenario) {
+  console.log("<<<..After Hook..>> ");
+});

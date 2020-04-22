@@ -1,4 +1,4 @@
-import { Before,After} from 'cucumber';
+import { Before } from "cucumber";
 
 // module.exports = function() {
 
@@ -14,14 +14,14 @@ import { Before,After} from 'cucumber';
 
 // };
 
+Before(function (scenario) {
+  console.log("<<<..Before Hook..>>>");
+  console.log(
+    `Starting scenario ${scenario.sourceLocation.uri}:${scenario.sourceLocation.line} (${scenario.pickle.name})`
+  );
 
-Before(function(scenario) {
-        console.log("<<<<<====================== This is Before =========================>>>",scenario)
-        // let environment_base = environment_base_url + '/';
-        // browser.url(environment_base).then(function () {
-        //     console.log('Environment Base URL Set---->', environment_base)
-        // })
-    });
-
-
-
+  // let environment_base = environment_base_url + '/';
+  // browser.url(environment_base).then(function () {
+  //     console.log('Environment Base URL Set---->', environment_base)
+  // })
+});
