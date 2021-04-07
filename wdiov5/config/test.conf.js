@@ -3,11 +3,11 @@ const argv = require('yargs').argv
 let featureFilePath;
 if (argv.ff) {
     //featureFilePath = 'tests/features/featureFiles/colleague/'+argv.ff+'.feature';
-    featureFilePath = 'wdiov5/features/test/' + argv.ff + '.feature';
+    featureFilePath = 'wdiov5/featureFiles/test/ui/' + argv.ff + '.feature';
 }
 else {
     //featureFilePath = 'tests/features/featureFiles/colleague/';
-    featureFilePath = 'wdiov5/features/test/*.feature';
+    featureFilePath = 'wdiov5/featureFiles/**/*.feature';
 }
 console.log('Feature============>>>>>>>>...',featureFilePath)
 
@@ -35,7 +35,7 @@ exports.config = {
   // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
-  specs: ["./wdiov5/features/**/*.feature"],
+  specs: ["./wdiov5/featureFiles/**/*.feature"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -202,7 +202,7 @@ exports.config = {
 
     require: [
       //"./wdiov5/support/common.js",
-      "./wdiov5/step_definitions/*.js"
+      "./wdiov5/steps/*.js"
       // Or search a (sub)folder for JS files with a wildcard
       // works since version 1.1 of the wdio-cucumber-framework
       // './src/**/*.js',

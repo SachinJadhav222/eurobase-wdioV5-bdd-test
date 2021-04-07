@@ -21,7 +21,7 @@ exports.config = {
   // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
-  specs: ["./wdiov5/features/**/*.feature"],
+  specs: ["./wdiov5/featureFiles/**/*.feature"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -55,11 +55,14 @@ exports.config = {
       // 5 instances get started at a time.
       maxInstances: 5,
       //
-      browserName: "chrome"
+      browserName: "chrome",
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
+      // "chromeOptions": {
+      //   binary: "./chromerdriver.exe"
+      // },
     }
   ],
   //
@@ -109,7 +112,8 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["chromedriver"],
+  services: ["chromedriver","selenium-standalone"],
+ // ["selenium-standalone", { drivers: { firefox: '0.28.0', chrome: true, chromiumedge: 'latest' } }],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -192,7 +196,7 @@ exports.config = {
 
     require: [
       //"./wdiov5/support/common.js",
-      "./wdiov5/step_definitions/*.js"
+      "./wdiov5/steps/*.js"
       // Or search a (sub)folder for JS files with a wildcard
       // works since version 1.1 of the wdio-cucumber-framework
       // './src/**/*.js',
